@@ -1,12 +1,13 @@
 import bottle
 from bottle import route, run, template, redirect, request, get, auth_basic, abort, response
 import MySQLdb as db
+import socket
+#print (socket.gethostbyname(socket.gethostname()))
 
 
 @route('/list')
 def view_list():
-        ip = request.get('REMOTE_ADDR')
-        return template ('list.html', ip=ip, rows = GetAllAuthors())
+        return template ('list.html', ip = socket.gethostbyname(socket.gethostname()), rows = GetAllAuthors())
 @route('/')
 def default():
         redirect('/login')
@@ -22,6 +23,7 @@ def view_login():
    # or ip = request['REMOTE_ADDR']
    #return template("Your IP is: {{ip}}", ip=ip)
 
+#########Acces to DB##########
 def GetAllAuthors():
     connect = db.connect('localhost', 'root', 'pass', 'test')
     with connect:
@@ -35,7 +37,7 @@ def GetAllAuthors():
            #print "%d %s %s %s" % row
         return rows
     curs.close()
-GetAllAuthors()
+#GetAllAuthors()
 
 run (host='0.0.0.0', port=80, debug=True, reloader=True)
 
