@@ -13,16 +13,16 @@
     <div class="row align-items-centre">
     <div class="col-sm"> Empty</div>
         <div class="col-sm col-border">
-        <form>
-        <div class="form-group">
+        <form action="/login" method="POST">
+        <div class="form-group" >
             <label for="InputName"> Your Name </label>
-            <input type="name" class="form-control" id="inputName" placeholder="Input Your Name please">
+            <input name="username" type="text" class="form-control"  placeholder="Input Your Name please">
         </div>
         <div class="form-group">
-            <label for="InputPassword"> Your Passowrd</label>
-            <input type="password" class="form-control" id="inputPass" placeholder="Password">
+            <label for="InputPassword"> Your Passoword</label>
+            <input name="password" type="password" class="form-control"  placeholder="Password">
         </div>
-        <button type="Submit" class="btn btn-primary"> Login </button>
+        <button type="Submit" class="btn btn-primary" value="Login"> Login </button>
     </form>
     </div>
         <div class="col-sm"> Empty</div>
