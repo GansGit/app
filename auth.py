@@ -2,7 +2,7 @@ import bottle
 from bottle import route, run, template, redirect, request, get, auth_basic, abort, response, post
 import base64
 
-#сюда по дуфолту йде запит.
+# сюда по дуфолту йде запит.
 @route ('/')
 
 # сюди, як я поняв має передатись юзернаме та пароль 
